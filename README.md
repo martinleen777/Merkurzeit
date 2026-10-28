@@ -32,9 +32,9 @@
 
 ## Google Analytics и баннер согласия
 
-Идентификатор (`G-…`) записывается в `src/site.mjs` → `GA_ID`. Пока там `""`, аналитики и баннера нет.
+Идентификатор `G-01SJQ3X3Z7` записан в `src/site.mjs` → `GA_ID`. Если вписать `""`, аналитика и баннер отключатся.
 
-Как это работает (TDDDG § 25, DSGVO): при первом посещении внизу появляется баннер с одинаково заметными кнопками «Akzeptieren» и «Ablehnen»; Google Analytics загружается **только после «Akzeptieren»**; ссылка «Cookie-Einstellungen» внизу каждой страницы снова открывает баннер, при отзыве согласия cookies `_ga` удаляются. Сроки хранения данных из настроек Google Analytics (Admin → Data retention) нужно вписать в `src/content/datenschutz.html` вместо `[AUFBEWAHRUNG]`.
+Как это работает (TDDDG § 25, DSGVO): при первом посещении внизу появляется баннер с одинаково заметными кнопками «Akzeptieren» и «Ablehnen»; Google Analytics загружается **только после «Akzeptieren»**; ссылка «Cookie-Einstellungen» внизу каждой страницы снова открывает баннер, при отзыве согласия cookies `_ga` удаляются. Сроки хранения в `src/content/datenschutz.html` (2 месяца для событий, 14 месяцев для данных пользователей, сброс при новом посещении) должны совпадать с настройками Google Analytics (Admin → Data collection and modification → Data retention).
 
 ## Посмотреть сайт у себя
 

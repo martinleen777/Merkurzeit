@@ -3,7 +3,7 @@
 
 // Идентификатор Google Analytics 4 (G-…). Пустая строка "" — аналитика и баннер согласия отключены.
 // Аналитика загружается только после согласия посетителя в баннере (TDDDG § 25, DSGVO).
-export const GA_ID = "";
+export const GA_ID = "G-01SJQ3X3Z7";
 
 export const SITE = {
   name: "MerkurZeit",
