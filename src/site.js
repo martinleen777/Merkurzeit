@@ -16,6 +16,22 @@
     });
   }
 
+  // ---------- Подменю «Mehr» ----------
+  var more = document.querySelector(".nav-more");
+  if (more) {
+    var moreBtn = more.querySelector(".nav-more-btn");
+    moreBtn.addEventListener("click", function () {
+      var open = more.classList.toggle("open");
+      moreBtn.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+    document.addEventListener("click", function (e) {
+      if (!more.contains(e.target)) { more.classList.remove("open"); moreBtn.setAttribute("aria-expanded", "false"); }
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") { more.classList.remove("open"); moreBtn.setAttribute("aria-expanded", "false"); }
+    });
+  }
+
   // ---------- Согласие на Google Analytics ----------
   // Аналитика загружается только после «Принять». Выбор хранится в localStorage;
   // по ссылке «Настройки cookies» внизу страницы его можно изменить в любой момент.

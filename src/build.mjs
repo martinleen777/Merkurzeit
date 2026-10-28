@@ -30,7 +30,11 @@ const NAV = [
   ["#eilbeker-spielhalle", "Eilbeker Spielhalle"],
   ["#fiesta-spielhalle", "Fiesta Spielhalle"],
   ["spielerschutz/", "Spielerschutz"],
+];
+// Подменю «Mehr»: внутренние страницы (путь от корня) и внешние ссылки (полный адрес).
+const MORE = [
   ["stellenangebote/", "Stellenangebote"],
+  [SITE.shop, "Shop"],
 ];
 
 const ICONS = {
@@ -48,7 +52,7 @@ function layout({ rel, title, description, body, root, ogImage, noindex = false,
     const link = href.startsWith("#") ? `${root}${href}` : `${root}${href}`;
     const isCur = href === current && !href.startsWith("#");
     return `<a href="${link}"${isCur ? ' aria-current="page"' : ""}>${label}</a>`;
-  }).join("");
+  }).join("") + moreMenu(root, current);
   const img = ogImage || `${SITE_URL}/assets/img/hero.jpg`;
   return `<!doctype html>
 <html lang="de"${GA_ID ? ` data-ga="${esc(GA_ID)}"` : ""}>
@@ -115,6 +119,16 @@ ${GA_ID ? `<section class="consent" role="dialog" aria-modal="false" aria-labell
 </body>
 </html>
 `;
+}
+
+function moreMenu(root, current) {
+  const items = MORE.map(([href, label]) => {
+    const external = /^https?:/.test(href);
+    const cur = !external && href === current;
+    return `<a href="${external ? href : root + href}"${external ? ' target="_blank" rel="noopener"' : ""}${cur ? ' aria-current="page"' : ""}>${label}</a>`;
+  }).join("");
+  const active = MORE.some(([href]) => href === current);
+  return `<div class="nav-more"><button type="button" class="nav-more-btn${active ? " is-current" : ""}" aria-expanded="false" aria-controls="nav-more-list">Mehr <svg viewBox="0 0 12 8" aria-hidden="true"><path d="M1 1.5 6 6.5l5-5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button><div class="nav-more-list" id="nav-more-list">${items}</div></div>`;
 }
 
 const rootFor = (rel) => "../".repeat(rel.split("/").filter(Boolean).length);

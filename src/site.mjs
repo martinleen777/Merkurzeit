@@ -13,6 +13,8 @@ export const SITE = {
   email: "merkurzeit@gmail.com",
   instagram: "https://www.instagram.com/kingclubhamburg",
   facebook: "https://www.facebook.com/kingcasinoclub",
+  // Служба заказов для персонала залов (пункт «Shop» в меню «Mehr»).
+  shop: "https://martinleen.duckdns.org/",
 };
 
 export const HOME = {
