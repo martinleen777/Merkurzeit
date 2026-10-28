@@ -1,0 +1,11 @@
+{
+  "name": "merkurzeit",
+  "private": true,
+  "description": "Website merkurzeit.com",
+  "type": "module",
+  "scripts": {
+    "build": "node src/build.mjs",
+    "serve": "node src/build.mjs && cd _site && python3 -m http.server 8000"
+  },
+  "engines": { "node": ">=18" }
+}
