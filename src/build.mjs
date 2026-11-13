@@ -98,7 +98,7 @@ ${body}
 <a class="round round--mail" href="mailto:${SITE.email}?subject=MerkurZeitWebLink" aria-label="E-Mail">${ICONS.mail}</a>
 <a class="round" href="${root}" aria-label="Startseite"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11 12 4l8 7v9h-5v-6H9v6H4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></a>
 </div>
-<p>© ${new Date().getFullYear()} ${SITE.name}. All rights reserved.</p>
+<p>© ${new Date().getFullYear()} ${SITE.name}. Alle Rechte vorbehalten.</p>
 </div>
 <nav class="footer-links" aria-label="Rechtliches">
 <a href="${root}impressum/">Impressum</a>
@@ -110,7 +110,7 @@ ${GA_ID ? '<button type="button" class="consent-open">Cookie-Einstellungen</butt
 </footer>
 ${GA_ID ? `<section class="consent" role="dialog" aria-modal="false" aria-labelledby="consent-title" hidden>
 <p class="consent-title" id="consent-title">Analyse-Cookies</p>
-<p class="consent-text">Wir möchten Google Analytics nutzen, um zu sehen, wie Besucher diese Website verwenden. Dabei werden Cookies gesetzt und Daten an Google übermittelt, auch in die USA. Die Analyse startet nur, wenn Sie zustimmen. Ihre Wahl können Sie jederzeit über „Cookie-Einstellungen“ unten auf der Seite ändern. <a href="${root}datenschutz/">Datenschutzerklärung</a></p>
+<p class="consent-text">Wir möchten Google Analytics nutzen, um zu sehen, wie Besucher diese Website verwenden. Dabei werden Cookies gesetzt und Daten an Google übermittelt, auch in die USA. Die Analyse startet nur, wenn Sie zustimmen. Ihre Wahl können Sie jederzeit über „Cookie-Einstellungen“ unten auf der Seite ändern. <a href="${root}datenschutz/">Datenschutzerklärung</a> · <a href="${root}impressum/">Impressum</a></p>
 <div class="consent-actions">
 <button type="button" class="btn consent-btn" data-consent="denied">Ablehnen</button>
 <button type="button" class="btn consent-btn" data-consent="granted">Akzeptieren</button>

@@ -21,7 +21,7 @@ export const HOME = {
   heading: ["MerkurZeit", "Spielhallen in Hamburg-Eilbek und Hamburg-Wandsbek"],
   intro: [
     "Willkommen bei MerkurZeit",
-    "Wir betreiben zwei Spielhallen in Hamburg. In gepflegten Räumen finden Sie moderne Geldspielgeräte führender Hersteller, eine ruhige Atmosphäre, geschultes freundliches Personal, sowie ein breites Angebot an kleine Snacks und Heiß-, Kaltgetränke.",
+    "Wir betreiben zwei Spielhallen in Hamburg. In gepflegten Räumen finden Sie moderne Geldspielgeräte führender Hersteller, eine ruhige Atmosphäre, geschultes, freundliches Personal sowie ein breites Angebot an kleinen Snacks, Heiß- und Kaltgetränken.",
     "Der verantwortungsvolle Umgang mit dem Spiel ist uns wichtig. Unser Personal ist im Spieler- und Jugendschutz geschult.",
   ],
   age: "Zutritt ab 18 Jahren",
@@ -36,7 +36,7 @@ export const HALLS = [
     hours: "12:00-5:00 Uhr",
     address: "Wandsbeker Chaussee 136, 22089 Hamburg",
     phone: "040 20005859",
-    location: "Direkt neben U-Bahn Station U1 Ritterstrasse",
+    location: "Direkt neben U-Bahn-Station Ritterstraße (U1)",
   },
   {
     id: "fiesta-spielhalle",

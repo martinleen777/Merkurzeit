@@ -60,6 +60,8 @@
   }
   function removeAnalytics() {
     if (GA_ID) window["ga-disable-" + GA_ID] = true;
+    // После отзыва согласия в Google больше ничего не отправляется (в том числе при закрытии страницы).
+    if (window.gtag) window.gtag("consent", "update", { analytics_storage: "denied", ad_storage: "denied", ad_user_data: "denied", ad_personalization: "denied" });
     // Удаляем cookies Google Analytics (_ga, _ga_…) для этого домена и его родительских доменов.
     var parts = location.hostname.split(".");
     var domains = [""];
@@ -72,7 +74,10 @@
     });
   }
   function showBanner(show) {
-    if (banner) banner.hidden = !show;
+    if (!banner) return;
+    banner.hidden = !show;
+    // Пока баннер открыт, добавляем отступ внизу страницы: ссылки в подвале (Impressum, Datenschutz) не должны быть закрыты.
+    document.body.style.paddingBottom = show ? (banner.offsetHeight + 32) + "px" : "";
   }
 
   if (GA_ID && banner) {
